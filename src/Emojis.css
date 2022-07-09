@@ -1,0 +1,203 @@
+.box
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 50px 50px 50px 50px ;
+    gap: 20px;
+}
+
+.card
+{
+    position: relative;
+    width: 75px;
+    height: 75px;
+    border-radius: 12px;
+    background-color: #2C2C2C;
+
+}
+
+.selectedCard{
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    left:0;
+    right: 0;
+    margin: auto;
+    width: 500px;
+    height: 250px;
+    padding: 20px;
+    background: #2C2C2C;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px 0px grey;
+    color: white;
+    text-decoration: none;
+    z-index: 1;
+    font-size: 22px;
+    font-weight: bold;
+}
+.selectedFirstLine{
+    display: flex;
+    flex-direction: row;
+
+}
+.selectedFLLeft{
+    display: flex;
+    gap:10px;
+}
+.selectedFLRight{
+    margin-left: auto;
+}
+.copyMessage{
+    display: flex;
+    position: fixed;
+    width: 100px;
+    height: 50px;
+    left:20px;
+    background: #2C2C2C;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px 0px grey;
+    color: white;
+    z-index: 1;
+    font-size: 20px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+}
+.table{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    color: white;
+}
+
+table,td{
+    text-align: center;
+    justify-content: center;
+    border: 2px solid #2C2C2C;
+    border-radius: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    background:#121212;
+}
+
+.tdLabel
+{
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.unicodeLabel
+{
+    font-weight: bold;
+    cursor: pointer;
+    font-size:24px;
+}
+
+.imgCard{
+    position: absolute;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+
+.dropbtn {
+    background-color: #2C2C2C;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 17px;
+
+}
+.boxIcon
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 40px;
+    cursor:pointer;
+}
+.squareBox{
+    width: 10px;
+    height: 10px;
+    background-color: #444444;
+    margin: 2px 2px 1px 2px;
+}
+
+.listIcon
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 40px;
+    cursor:pointer;
+}
+.rectangleBox{
+    width: 14px;
+    height: 7px;
+    background-color: #444444;
+    margin: 2px 2px 1px 2px;
+}
+.categoryBox{
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 400px;
+    height: 100px;
+    margin: 50px auto;
+    border: 1px #171717 solid;
+    border-radius: 10px;
+    align-items: center;
+    background-color: #171717;
+
+}
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #444444;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    z-index: 1;
+    margin: auto;
+}
+
+/* Links inside the dropdown */
+.dropdown-content label {
+    color: white;
+    font-weight: bold;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content label:hover {background-color: #121212}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+    overflow: hidden;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #444444;
+}
+

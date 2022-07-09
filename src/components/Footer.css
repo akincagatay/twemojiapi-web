@@ -1,0 +1,25 @@
+.footer{
+    clear: both;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #171717;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.buyCoffee{
+    cursor:pointer;
+    bottom:0;
+
+}
+
+.imgCoffee{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

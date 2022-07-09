@@ -1,0 +1,23 @@
+.topNav {
+    background-color: #171717;
+    overflow: hidden;
+
+}
+.topNav a, .logoLabel {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bolder;
+}
+
+.leftNav{
+    float:left;
+}
+
+.rightNav{
+    float:right;
+    padding-right: 50px;
+}
