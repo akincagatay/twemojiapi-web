@@ -20,7 +20,10 @@ function Documentation() {
                     </div>
                 </div>
                 <div className="rightBody">
-                    <h1>Examples</h1>
+                    <div className="textPlace">
+                        <h1>Example</h1>
+                        <h1>All Links</h1>
+                    </div>
                 </div>
             </div>
             <Footer/>
