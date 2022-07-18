@@ -6,7 +6,7 @@ function Header(){
     return(
         <div className="topNav">
             <div className="leftNav">
-                <label className="logoLabel">Twemoji API</label>
+                <Link to="../" className="logoLabel">Twemoji API</Link>
             </div>
             <div className="rightNav">
                 <Link to="../Documentation">Documentation</Link>

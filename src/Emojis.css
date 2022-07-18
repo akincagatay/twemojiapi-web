@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 50px 50px 50px 50px ;
+    margin: 50px 50px 100px 100px ;
     gap: 20px;
 }
 
@@ -13,7 +13,7 @@
     width: 75px;
     height: 75px;
     border-radius: 12px;
-    background-color: #2C2C2C;
+    background-color: #CCCCFF;
 
 }
 
@@ -27,9 +27,9 @@
     width: 500px;
     height: 250px;
     padding: 20px;
-    background: #2C2C2C;
+    background: #B4B4FC;
     border-radius: 12px;
-    box-shadow: 0px 4px 8px 0px grey;
+    box-shadow: 0px 4px 8px 0px #444444;
     color: white;
     text-decoration: none;
     z-index: 1;
@@ -61,13 +61,12 @@
 .selectedFirstLine{
     display: flex;
     flex-direction: row;
-
 }
 .selectedFLLeft{
     display: flex;
     gap:10px;
 }
-.selectedFLRight{
+.selectedRight{
     margin-left: auto;
 }
 .selectedLinks{
@@ -75,16 +74,41 @@
     flex-direction: row;
     gap:20px;
 }
+.selectedSecondLine{
+    display: flex;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.selectedThirdLine {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.selectedButtons{
+    border-radius: 12px;
+    background: #CCCCFF;
+    color:white;
+    width: 150px;
+    height: 75px;
+    text-align: center;
+    border-color: #B4B4FC;
+    font-weight: bold;
+    font-size: 17px;
+}
+
 .copyMessage{
     display: flex;
     position: fixed;
     width: 100px;
     height: 50px;
     left:20px;
-    background: #2C2C2C;
+    background: #B4B4FC;
     border-radius: 12px;
     box-shadow: 0px 4px 8px 0px grey;
-    color: white;
+    color: #333333;
     z-index: 1;
     font-size: 20px;
     font-weight: bold;
@@ -97,18 +121,19 @@
     margin-left: auto;
     margin-right: auto;
     width: 80%;
-    color: white;
+    color: #333333;
 }
 
 table,td{
-    text-align: center;
-    justify-content: center;
-    border: 2px solid #2C2C2C;
-    border-radius: 12px;
+    border-radius: 8px;
     padding-left: 20px;
     padding-right: 20px;
-    padding-bottom: 20px;
-    background:#121212;
+    padding-bottom: 10px;
+}
+td{
+    background: #CCCCFF;
+    text-align: center;
+    vertical-align: bottom;
 }
 
 .tdLabel
@@ -134,9 +159,9 @@ table,td{
 }
 
 
-.dropbtn {
-    background-color: #2C2C2C;
-    color: white;
+.dropButton {
+    background-color: #B4B4FC;
+    color: black;
     padding: 16px;
     font-size: 16px;
     border: none;
@@ -157,7 +182,7 @@ table,td{
 .squareBox{
     width: 10px;
     height: 10px;
-    background-color: #444444;
+    background-color: black;
     margin: 2px 2px 1px 2px;
 }
 
@@ -172,7 +197,7 @@ table,td{
 .rectangleBox{
     width: 14px;
     height: 7px;
-    background-color: #444444;
+    background-color: black;
     margin: 2px 2px 1px 2px;
 }
 .categoryBox{
@@ -181,10 +206,10 @@ table,td{
     max-width: 400px;
     height: 100px;
     margin: 50px auto;
-    border: 1px #171717 solid;
+    border: 1px #CCCCFF solid;
     border-radius: 10px;
     align-items: center;
-    background-color: #171717;
+    background-color: #CCCCFF;
 
 }
 /* The container <div> - needed to position the dropdown content */
@@ -197,7 +222,7 @@ table,td{
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #444444;
+    background-color: #B4B4FC;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     border-radius: 10px;
@@ -207,7 +232,7 @@ table,td{
 
 /* Links inside the dropdown */
 .dropdown-content label {
-    color: white;
+    color: black;
     font-weight: bold;
     padding: 12px 16px;
     text-decoration: none;
@@ -215,7 +240,7 @@ table,td{
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content label:hover {background-color: #121212}
+.dropdown-content label:hover {background-color: #B4B4FC}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
@@ -225,6 +250,6 @@ table,td{
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-    background-color: #444444;
+    background-color: #B4B4FC;
 }
 

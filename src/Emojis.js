@@ -10,28 +10,30 @@ function Emojis()
     const [isBoxView,setIsBoxView] = useState(true);
     const [isClicked,setIsClicked] = useState(false);
     const [isCopied,setIsCopied] = useState(false);
-    const [buttonText, setButtonText] = useState("Categories");
+    const [buttonText, setButtonText] = useState("All Emojis");
     const [clickedName, setClickedName] = useState();
     const [clickedUnicode, setClickedUnicode] = useState();
     const [clickedHex, setClickedHex] = useState();
     const [clickedSVG, setClickedSVG] = useState();
     const [clickedPNG, setClickedPNG] = useState();
+    const [clickedSubCategory, setClickedSubCategory] = useState();
     const [labelSVG, setLabelSVG] = useState();
     const [labelPNG, setLabelPNG] = useState();
     const changeView = (bool) =>{
-        setIsBoxView(bool)
+        setIsBoxView(bool);
     }
     const changeClick = (bool) =>{
-        setIsClicked(bool)
+        setIsClicked(bool);
     }
-    const getClickedItem = (name,unicode,hex,svg,png)=>{
-        setClickedName(name)
-        setClickedUnicode(unicode)
-        setClickedHex(hex)
-        setClickedSVG(svg)
-        setLabelSVG("SVG")
-        setClickedPNG(png)
-        setLabelPNG("PNG")
+    const getClickedItem = (name,unicode,hex,svg,png,subCategory)=>{
+        setClickedName(name);
+        setClickedUnicode(unicode);
+        setClickedHex(hex);
+        setClickedSVG(svg);
+        setLabelSVG("SVG");
+        setClickedPNG(png);
+        setLabelPNG("PNG");
+        setClickedSubCategory(subCategory);
     }
     const changeButtonText = (text) => setButtonText(text);
 
@@ -41,7 +43,7 @@ function Emojis()
         setTimeout(()=> setIsCopied(false),1000)
     }
     
-    const getApiData = async (category) => {
+    const getCategoryData = async (category) => {
         const response = await fetch(
             "https://twemoji-api.herokuapp.com/v1/allData/category/"+category
         ).then((response) => response.json());
@@ -49,8 +51,15 @@ function Emojis()
         setItems(response);
 
     };
+
+    const getAllData = async (category) => {
+        const response = await fetch(
+            "https://twemoji-api.herokuapp.com/v1/allData/").then((response) => response.json());
+        setItems(response);
+
+    };
     useEffect(() => {
-        getApiData("smileys-emotions")
+        getAllData("smileys-emotions")
     },[])
 
 
@@ -61,12 +70,17 @@ function Emojis()
             <div className="body">
                 <div className="categoryBox">
                     <div className="dropdown">
-                        <button className="dropbtn">{buttonText}</button>
+                        <button className="dropButton">{buttonText}</button>
                         <div className="dropdown-content">
-                            <label onClick={()=>{getApiData("smileys-emotions"); changeButtonText("Smileys & Emotions")}}>Smileys & Emotions</label>
-                            <label onClick={()=>{getApiData("flags"); changeButtonText("Flags")}}>Flags</label>
-                            <label onClick={()=>{getApiData("people-body"); changeButtonText("People & Body")}}>People & Body</label>
-                            <label onClick={()=>{getApiData("animals-nature"); changeButtonText("Animals & Nature")}}>Animals & Nature"</label>
+                            <label onClick={()=>{getCategoryData("smileys-emotions"); changeButtonText("Smileys & Emotions")}}>Smileys & Emotions</label>
+                            <label onClick={()=>{getCategoryData("people-body"); changeButtonText("People & Body")}}>People & Body</label>
+                            <label onClick={()=>{getCategoryData("animals-nature"); changeButtonText("Animals & Nature")}}>Animals & Nature</label>
+                            <label onClick={()=>{getCategoryData("food-drink"); changeButtonText("Food & Drink")}}>Food & Drink</label>
+                            <label onClick={()=>{getCategoryData("travel-places"); changeButtonText("Travel & Places")}}>Travel & Places</label>
+                            <label onClick={()=>{getCategoryData("activities"); changeButtonText("Activities")}}>Activities</label>
+                            <label onClick={()=>{getCategoryData("objects"); changeButtonText("Object")}}>Objects</label>
+                            <label onClick={()=>{getCategoryData("symbols"); changeButtonText("Symbols")}}>Symbols</label>
+                            <label onClick={()=>{getCategoryData("flags"); changeButtonText("Flags")}}>Flags</label>
                         </div>
                     </div>
                     <div className="boxIcon" onClick={()=>changeView(true)}>
@@ -80,6 +94,9 @@ function Emojis()
                         <div className="rectangleBox"></div>
                         <div className="rectangleBox"></div>
                         <div className="rectangleBox"></div>
+                    </div>
+                    <div className="refresh" onClick={()=>{getAllData();changeButtonText("All Emojis")}}>
+                        <img src="https://twemoji.maxcdn.com/v/latest/svg/1f504.svg" alt="Refresh" width="32px" height="32px"/>
                     </div>
                 </div>
                 {isBoxView ?
@@ -95,19 +112,19 @@ function Emojis()
                                             <label>Name :</label>
                                             <label onClick={() => {navigator.clipboard.writeText(clickedName); setClickedName("COPIED");setTimeout(()=>setClickedName(clickedName),1000)}}>{clickedName}</label>
                                         </div>
-                                        <img className="selectedFLRight" onClick={()=>changeClick(false)} src="https://twemoji.maxcdn.com/v/latest/svg/274c.svg" width="22px" height="22px"/>
+                                        <img className="selectedRight" onClick={()=>changeClick(false)} src="https://twemoji.maxcdn.com/v/latest/svg/274c.svg" width="22px" height="22px"/>
                                     </div>
                                     <div className="selectedSecondLine">
-                                        <label>Unicode:</label>
+                                        <label>Unicode :</label>
                                         <label onClick={()=> {navigator.clipboard.writeText(clickedUnicode); setClickedUnicode("COPIED");setTimeout(()=>setClickedUnicode(clickedUnicode),1000)}}> {clickedUnicode}</label>
                                     </div>
                                     <div className="selectedThirdLine">
-                                        <label>Hex:</label>
+                                        <label>Hex :</label>
                                         <label onClick={()=> {navigator.clipboard.writeText(clickedHex); setClickedHex("COPIED"); setTimeout(()=>setClickedHex(clickedHex),1000)}}>{clickedHex}</label>
                                     </div>
                                     <div className="selectedLinks">
-                                        <label onClick={()=> {navigator.clipboard.writeText(clickedSVG); setLabelSVG("COPIED"); setTimeout(()=>setLabelSVG("SVG"),1000)}}>{labelSVG}</label>
-                                        <label onClick={()=> {navigator.clipboard.writeText(clickedPNG); setLabelPNG("COPIED"); setTimeout(()=>setLabelPNG("PNG"),1000)}}>{labelPNG}</label>
+                                        <button className="selectedButtons" onClick={()=> {navigator.clipboard.writeText(clickedSVG); setLabelSVG("COPIED"); setTimeout(()=>setLabelSVG("SVG"),1000)}}>{labelSVG}</button>
+                                        <button className="selectedButtons" onClick={()=> {navigator.clipboard.writeText(clickedPNG); setLabelPNG("COPIED"); setTimeout(()=>setLabelPNG("PNG"),1000)}}>{labelPNG}</button>
                                     </div>
                                 </div>
 
@@ -129,7 +146,14 @@ function Emojis()
                                 <label>COPIED</label>
                             </div>}
                         <table className="table">
-
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Unicode</th>
+                                    <th>Hex</th>
+                                    <th>SVG</th>
+                                    <th>PNG</th>
+                                    <th>Sub Category</th>
+                                </tr>
                             {items.map(item => (
 
                                 <tr>
@@ -138,6 +162,7 @@ function Emojis()
                                     <td><label className="tdLabel" onClick={() => { navigator.clipboard.writeText(item.hex); changeCopy()}}>{item.hex}</label></td>
                                     <td><label className="tdLabel" onClick={() => { navigator.clipboard.writeText(item.svg); changeCopy()}}>SVG</label></td>
                                     <td><label className="tdLabel" onClick={() => { navigator.clipboard.writeText(item.png); changeCopy()}}>PNG</label></td>
+                                    <td><label className="tdLabel" onClick={() => {navigator.clipboard.writeText(item.sub_category);changeCopy()}}>{item.sub_category}</label></td>
                                 </tr>
 
                             ))}
