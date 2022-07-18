@@ -41,10 +41,10 @@ function Documentation() {
                         <h1>Routes</h1>
                         <ul> All Data Routes
                             <li>https://twemoji-api.herokuapp.com/v1/allData</li>
-                            <li>https://twemoji-api.herokuapp.com/v1/name/:name</li>
-                            <li>https://twemoji-api.herokuapp.com/v1/similarname/:similarname</li>
-                            <li>https://twemoji-api.herokuapp.com/v1/category/:category</li>
-                            <li>https://twemoji-api.herokuapp.com/v1/subcategory/:subcategory</li>
+                            <li>https://twemoji-api.herokuapp.com/v1/allData/name/:name</li>
+                            <li>https://twemoji-api.herokuapp.com/v1/allData/similarname/:similarname</li>
+                            <li>https://twemoji-api.herokuapp.com/v1/allData/category/:category</li>
+                            <li>https://twemoji-api.herokuapp.com/v1/allData/subcategory/:subcategory</li>
                         </ul>
                         <ul> SVG Routes
                             <li>https://twemoji-api.herokuapp.com/v1/svg/:name</li>
