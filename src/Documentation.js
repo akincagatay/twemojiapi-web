@@ -14,8 +14,8 @@ function Documentation() {
                 <div className="leftBody">
                     <div className="textPlace">
                         <h1>What is Twemoji API?</h1>
-                        <p>Twemoji is an API that you can get Twitter Emojis easily.Twitter API returns Emoji names,
-                            unicodes, hex, svg and png links.</p>
+                        <p>Twemoji is an API where you can easily get Twitter Emojis.
+                            Twitter API returns Emoji names, unicodes, hex, svg and png links.</p>
                         <p>You can find all source codes on <a href="https://github.com/akincagatay">GitHub</a></p>
                         <h1>How Routes Works?</h1>
                         <p>You can get all data with Twemoji API. Also you can only get svg/png url or emoji's unicode/hex.</p>
